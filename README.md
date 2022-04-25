@@ -1,5 +1,7 @@
 # 🌿 MERN app using Redux Toolkit
 
+*What is [MERN](https://www.educative.io/edpresso/what-is-mern-stack)?*
+
 ## Prerequisites
 
 You need to have [NodeJS](https://nodejs.org/en/) installed.
