@@ -66,8 +66,15 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error('Invalid credentials')
 })
 
+// TODO: add error handling?
 const getUser = asyncHandler(async (req, res) => {
-    res.json({ message: 'get user' })
+    const { _id, name, email } = await User.findById(req.user.id)
+
+    res.status(200).json({
+        id: _id,
+        name,
+        email,
+    })
 })
 
 // missing the {}?, this syntax just means we're returning what comes after =>
