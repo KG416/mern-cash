@@ -4,6 +4,7 @@ const colors = require('colors')
 
 const connectDB = require('./config/db')
 const postRoutes = require('./routes/postRoutes')
+const userRoutes = require('./routes/userRoutes')
 const { errorHandler } = require('./middleware/errorMiddleware')
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/posts', postRoutes)
+app.use('/api/users', userRoutes)
 app.use(errorHandler)
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))

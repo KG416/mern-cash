@@ -21,15 +21,19 @@ Running the these commands in a terminal does the following:
 ## Tools
 
 ### [MongoDB](https://mongodb.com/)
+
 A noSQL database
 
 ### [Express](https://expressjs.com/)
+
 A node framework
 
 ### [React](https://reactjs.org/)
+
 A JavaScript library
 
 ### [Node](https://nodejs.org/)
+
 A development platform for executing JavaScript code server-side
 
 ## Code organisation
