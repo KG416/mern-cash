@@ -1,6 +1,6 @@
 # 🌿 MERN app using Redux Toolkit
 
-*What is [MERN](https://www.educative.io/edpresso/what-is-mern-stack)?*
+_What is [MERN](https://www.educative.io/edpresso/what-is-mern-stack)?_
 
 ## Prerequisites
 
@@ -10,15 +10,27 @@ You need to have [NodeJS](https://nodejs.org/en/) installed.
 
 - Clone the repo
 - In a terminal, run `npm install`
-- To start develpment server, run `npm run server`
+
+## Starting develpment servers
+
+Running the these commands in a terminal does the following:
+
+- `npm start` (starts development server & connects to database)
+- `npm run server` (starts develpment server WITH NODEMON & connects to database)
 
 ## Tools
 
-### React
+### [MongoDB](https://mongodb.com/)
+A noSQL database
 
-### [Nodemon](https://www.npmjs.com/package/nodemon) (optional)
+### [Express](https://expressjs.com/)
+A node framework
 
-To avoid having to restart the node server after making changes.
+### [React](https://reactjs.org/)
+A JavaScript library
+
+### [Node](https://nodejs.org/)
+A development platform for executing JavaScript code server-side
 
 ## Code organisation
 
@@ -26,7 +38,7 @@ The code is organized using the MVC pattern. [What is MVC?](https://www.youtube.
 
 **The folder structure is as follows:**
 
-- ...
+-
 
 ## Inspiration
 
