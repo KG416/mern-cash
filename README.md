@@ -13,10 +13,10 @@ You need to have [NodeJS](https://nodejs.org/en/) installed.
 
 ## Starting develpment servers
 
-Running the these commands in a terminal does the following:
+Running the these commands in a terminal does the following
 
-- `npm start` (starts development server & connects to database)
-- `npm run server` (starts develpment server WITH NODEMON & connects to database)
+- `npm start` starts development server & connects to database
+- `npm run server` starts develpment server WITH NODEMON & connects to database
 
 ## Tools
 
