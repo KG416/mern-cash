@@ -26,7 +26,7 @@ The code is organized using the MVC pattern. [What is MVC?](https://www.youtube.
 
 **The folder structure is as follows:**
 
-- ...
+- 
 
 ## Inspiration
 
