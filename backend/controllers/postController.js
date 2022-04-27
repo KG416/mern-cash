@@ -1,22 +1,22 @@
-const getGoals = (req, res) => {
+const getPosts = (req, res) => {
     res.status(200).json('get all')
 }
 
-const setGoal = (req, res) => {
+const setPost = (req, res) => {
     res.status(200).json('create')
 }
 
-const updateGoal = (req, res) => {
+const updatePost = (req, res) => {
     res.status(200).json(`update ${req.params.id}`)
 }
 
-const deleteGoal = (req, res) => {
+const deletePost = (req, res) => {
     res.status(200).json(`delete ${req.params.id}`)
 }
 
 module.exports = {
-    getGoals,
-    setGoal,
-    updateGoal,
-    deleteGoal,
+    getPosts,
+    setPost,
+    updatePost,
+    deletePost,
 }
