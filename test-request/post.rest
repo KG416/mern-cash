@@ -1,0 +1,24 @@
+@base_url = http://localhost:5000/api
+
+// ======== GET ALL POSTS ========
+GET {{base_url}}/posts
+###
+
+// ======== CREATE POST ========
+POST {{base_url}}/posts
+Content-Type: application/json
+
+{
+    "text": "test text"
+}
+###
+
+// ======== UPDATE POST ======== (id at the end of url required)
+PUT§ {{base_url}}/posts/
+Authorization: Bearer <TOKEN>
+Content-Type: application/json
+
+{
+    "text": "test text"
+}
+###

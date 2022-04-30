@@ -7,9 +7,13 @@ const {
     deletePost
 } = require('../controllers/postController')
 
-router.get('/', getPosts)
-router.post('/', setPost)
-router.put('/:id', updatePost)
-router.delete('/:id', deletePost)
+const { protect } = require('../middleware/authMiddleware')
+
+// TODO: protect not working here, I can still get all posts without token
+
+router.get('/', protect, getPosts)
+router.post('/', protect, setPost)
+router.put('/:id', protect, updatePost)
+router.delete('/:id', protect, deletePost)
 
 module.exports = router

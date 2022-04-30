@@ -1,0 +1,35 @@
+@base_url = http://localhost:5000/api
+
+// ======== SIGNUP ========
+
+POST {{base_url}}/users
+content-type: application/json
+
+{
+    "name": "holger",
+    "email": "holger@holger.com",
+    "password": "qwerty123"
+}
+###
+
+// ======== LOGIN ========
+POST {{base_url}}/users/login
+content-type: application/json
+
+{
+    "name": "fredde",
+    "email": "fredde@fredde.com",
+    "password": "qwerty123"
+}
+###
+
+// ======== GET USER by token ======== (token required)
+GET {{base_url}}/users/user
+content-type: application/json
+Authorization: Bearer <BEARER TOKEN HERE>
+
+{
+    "name": "fredde",
+    "email": "fredde@fredde.com",
+    "password": "qwerty123"
+}
