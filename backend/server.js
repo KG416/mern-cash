@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config()
 const colors = require('colors')
 
 const connectDB = require('./config/db')
-const postRoutes = require('./routes/postRoutes')
+const sourcePostRoutes = require('./routes/sourcePostRoutes')
 const userRoutes = require('./routes/userRoutes')
 const { errorHandler } = require('./middleware/errorMiddleware')
 
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/posts', postRoutes)
+app.use('/api/sourceposts', sourcePostRoutes)
 app.use('/api/users', userRoutes)
 app.use(errorHandler)
 

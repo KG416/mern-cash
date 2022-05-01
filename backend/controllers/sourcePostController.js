@@ -1,64 +1,65 @@
 const asyncHandler = require('express-async-handler')
-const Post = require('../models/postModel')
+const SourcePost = require('../models/sourcePostModel')
 const User = require('../models/userModel')
 
-const getPosts = async (req, res) => {
-    const posts = await Post.find({ user: req.user.id })
+const getSourcePosts = async (req, res) => {
+    const sourcePosts = await SourcePost.find({ user: req.user.id })
 
-    res.status(200).json(posts)
+    res.status(200).json(sourcePosts)
 }
 
-const setPost = asyncHandler(async (req, res) => {
+const setSourcePost = asyncHandler(async (req, res) => {
     if (!req.body.text) {
         res.status(400)
         throw new Error('Please add text field')
     }
-    const post = await Post.create({
+
+    const sourcePost = await SourcePost.create({
         text: req.body.text,
         user: req.user.id,
     })
 
-    res.status(200).json(post)
+    res.status(200).json(sourcePost)
 })
 
-const updatePost = asyncHandler(async (req, res) => {
-    const post = await Post.findById(req.params.id)
+const updateSourcePost = asyncHandler(async (req, res) => {
+    const sourcePost = await SourcePost.findById(req.params.id)
 
-    if (!post) {
+    if (!sourcePost) {
         res.status(400)
-        throw new Error('Post not found')
+        throw new Error('Source post not found')
     }
 
     const user = await User.findById(req.user.id)
-
-    if(!user) {
+    
+    if (!user) {
         // 401 Unauthorized. Client shouldn't have access to this
         res.status(401)
         throw new Error('User not found')
     }
-
-    if(post.user.id.toString() !== user.id) {
+    
+    if (sourcePost.user.toString() !== user.id) {
         // 401 Unauthorized. Client shouldn't have access to this
         res.status(401)
         throw new Error('User not authorized')
     }
 
-    const updatedPost = await Post.findByIdAndUpdate(
+    const updatedSourcePost = await SourcePost.findByIdAndUpdate(
         req.params.id,
         req.body,
         { new: true }
     )
 
-    res.status(200).json(updatedPost)
+    res.status(200).json(updatedSourcePost)
 })
 
-const deletePost = asyncHandler(async (req, res) => {
+const deleteSourcePost = asyncHandler(async (req, res) => {
     const id = req.params.id
-    const post = await Post.findById(id)
+    const sourcePost = await SourcePost.findById(id)
 
-    if (!post) {
+    if (!sourcePost) {
         res.status(400)
-        throw new Error('Post not found')
+        throw new Error('Source post not found')
     }
 
     const user = await User.findById(req.user.id)
@@ -69,19 +70,19 @@ const deletePost = asyncHandler(async (req, res) => {
         throw new Error('User not found')
     }
 
-    if (post.user.toString() !== user.id) {
+    if (sourcePost.user.toString() !== user.id) {
         // 401 Unauthorized. Client shouldn't have access to this
         res.status(401)
         throw new Error('User not authorized')
     }
 
-    await post.remove()
+    await sourcePost.remove()
     res.status(200).json({ id: id })
 })
 
 module.exports = {
-    getPosts,
-    setPost,
-    updatePost,
-    deletePost,
+    getSourcePosts,
+    setSourcePost,
+    updateSourcePost,
+    deleteSourcePost,
 }
