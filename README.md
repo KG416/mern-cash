@@ -1,4 +1,4 @@
-# 🌿 MERN app using Redux Toolkit
+# 🌿 MERN app using Redux Toolkit | WIP 🚧
 
 _What is [MERN](https://www.educative.io/edpresso/what-is-mern-stack)?_
 
