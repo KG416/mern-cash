@@ -38,11 +38,7 @@ A development platform for executing JavaScript code server-side
 
 ## Code organisation
 
-The code is organized using the MVC pattern. [What is MVC?](https://www.youtube.com/watch?v=DUg2SWWK18I&ab_channel=WebDevSimplified)
-
-**The folder structure is as follows:**
-
--
+The code is organized with inspiration from the MVC pattern. [What is MVC?](https://www.youtube.com/watch?v=DUg2SWWK18I&ab_channel=WebDevSimplified)
 
 ## Inspiration
 
