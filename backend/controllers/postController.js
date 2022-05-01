@@ -1,8 +1,9 @@
 const asyncHandler = require('express-async-handler')
 const Post = require('../models/postModel')
+const User = require('../models/userModel')
 
 const getPosts = async (req, res) => {
-    const posts = await Post.find()
+    const posts = await Post.find({ user: req.user.id })
 
     res.status(200).json(posts)
 }
@@ -28,6 +29,20 @@ const updatePost = asyncHandler(async (req, res) => {
         throw new Error('Post not found')
     }
 
+    const user = await User.findById(req.user.id)
+
+    if(!user) {
+        // 401 Unauthorized. Client shouldn't have access to this
+        res.status(401)
+        throw new Error('User not found')
+    }
+
+    if(post.user.id.toString() !== user.id) {
+        // 401 Unauthorized. Client shouldn't have access to this
+        res.status(401)
+        throw new Error('User not authorized')
+    }
+
     const updatedPost = await Post.findByIdAndUpdate(
         req.params.id,
         req.body,
@@ -44,6 +59,20 @@ const deletePost = asyncHandler(async (req, res) => {
     if (!post) {
         res.status(400)
         throw new Error('Post not found')
+    }
+
+    const user = await User.findById(req.user.id)
+
+    if (!user) {
+        // 401 Unauthorized. Client shouldn't have access to this
+        res.status(401)
+        throw new Error('User not found')
+    }
+
+    if (post.user.toString() !== user.id) {
+        // 401 Unauthorized. Client shouldn't have access to this
+        res.status(401)
+        throw new Error('User not authorized')
     }
 
     await post.remove()

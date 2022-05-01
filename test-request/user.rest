@@ -17,7 +17,6 @@ POST {{base_url}}/users/login
 content-type: application/json
 
 {
-    "name": "fredde",
     "email": "fredde@fredde.com",
     "password": "qwerty123"
 }
