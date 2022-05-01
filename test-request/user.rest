@@ -25,11 +25,4 @@ content-type: application/json
 
 // ======== GET USER by token ======== (token required)
 GET {{base_url}}/users/user
-content-type: application/json
-Authorization: Bearer <BEARER TOKEN HERE>
-
-{
-    "name": "fredde",
-    "email": "fredde@fredde.com",
-    "password": "qwerty123"
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNmQ0ZjY0NTQ5ZTJmODJjNWFmODMxZCIsImlhdCI6MTY1MTM5OTU1OCwiZXhwIjoxNjUzOTkxNTU4fQ.JM0sR8YOUaHBN4LvutwdL33LvD691blkFDnQ6TylTyI
