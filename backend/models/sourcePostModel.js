@@ -7,9 +7,18 @@ const sourcePostSchema = mongoose.Schema({
         ref: 'User',
     },
     sources: [{
-        name: String,
-        balance: Number,
-        currency: String
+        name: {
+            type: String,
+            required: [true, 'Please add a name']
+        },
+        balance: {
+            type: Number,
+            required: [true, 'Please add balance']
+        },
+        currency: {
+            type: String,
+            required: [true, 'Please add a currency']
+        },
     }]
 }, {
     timestamps: true,
