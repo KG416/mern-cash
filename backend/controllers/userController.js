@@ -77,7 +77,6 @@ const getUser = asyncHandler(async (req, res) => {
     })
 })
 
-// missing the {}?, this syntax just means we're returning what comes after =>
 const generateToken = id =>
     jwt.sign({ id }, process.env.JWT_SECRET, {
         expiresIn: '30d',
