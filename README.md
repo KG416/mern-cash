@@ -42,4 +42,4 @@ The code is organized with inspiration from the MVC pattern. [What is MVC?](http
 
 ## Inspiration
 
-[Traversy Media](https://www.youtube.com/watch?v=-0exw-9YJBo&ab_channel=TraversyMedia)
+[Traversy Media](https://www.traversymedia.com/)
