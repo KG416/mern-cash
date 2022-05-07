@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Dashboard from './views/Dashboard'
 import Signup from './views/Signup'
 import Login from './views/Login'
+import Header from './components/Header'
 
 const App = () => {
 
   return (
     <Container>
       <Router>
-        <h1>APP</h1>
-        <br />
+        <Header />
         <Routes>
           <Route exact path='/' element={<Dashboard />} />
           <Route path='/signup' element={<Signup />} />
