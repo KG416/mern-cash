@@ -1,0 +1,9 @@
+@import '../../global.scss';
+
+.wrapper {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: $borderRadiusSmall;
+  background-color: #393939;
+  filter: drop-shadow(0 0 0.1rem #ffffff);
+}
