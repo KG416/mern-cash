@@ -9,13 +9,13 @@ const getSourcePosts = async (req, res) => {
 }
 
 const setSourcePost = asyncHandler(async (req, res) => {
-    if (!req.body.text) {
+    if (!req.body.sources) {
         res.status(400)
-        throw new Error('Please add text field')
+        throw new Error('Please add sources (an array of objects)')
     }
 
     const sourcePost = await SourcePost.create({
-        text: req.body.text,
+        sources: req.body.sources,
         user: req.user.id,
     })
 

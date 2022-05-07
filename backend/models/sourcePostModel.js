@@ -6,10 +6,11 @@ const sourcePostSchema = mongoose.Schema({
         required: true,
         ref: 'User',
     },
-    text: {
-        type: String,
-        requireed: [true, 'Please add a text value']
-    }
+    sources: [{
+        name: String,
+        balance: Number,
+        currency: String
+    }]
 }, {
     timestamps: true,
 })
