@@ -4,6 +4,7 @@ const colors = require('colors')
 
 const connectDB = require('./config/db')
 const sourcePostRoutes = require('./routes/sourcePostRoutes')
+const depositsRoutes = require('./routes/depositsRoutes')
 const userRoutes = require('./routes/userRoutes')
 const { errorHandler } = require('./middleware/errorMiddleware')
 
@@ -15,6 +16,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/sourceposts', sourcePostRoutes)
+app.use('/api/deposits', depositsRoutes)
 app.use('/api/users', userRoutes)
 app.use(errorHandler)
 
