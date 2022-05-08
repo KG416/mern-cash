@@ -24,6 +24,6 @@
 
   &:focus-visible {
         outline: 5px solid $color3;
-        filter: drop-shadow(0 0 0.2rem $funColor1);
+        border: none;
       }
 }

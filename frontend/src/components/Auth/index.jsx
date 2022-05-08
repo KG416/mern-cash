@@ -3,18 +3,20 @@ import Section from '../Section'
 import Button from '../Button'
 
 // style
-import styles from './AuthView.module.scss'
+import styles from './Auth.module.scss'
 
-function AuthView({
+function Auth({
+  authType = '',
   heading = '',
   subHeading = '',
   submitText = '',
-  formData = {},
+  name,
+  email,
+  password,
+  password2,
   onSubmit = () => {},
   onChange = () => {},
 }) {
-  const { name, email, password, password2 } = formData
-  const AUTH_TYPE = 'password2' in formData ? 'signup' : 'login'
 
   return (
     <div className={styles.wrapper}>
@@ -25,7 +27,7 @@ function AuthView({
 
       <Section>
         <form onSubmit={onSubmit}>
-          {AUTH_TYPE === 'signup' && (
+          {authType === 'signup' && (
             <input
               type='text'
               id='name'
@@ -54,7 +56,7 @@ function AuthView({
             onChange={onChange}
           />
 
-          {AUTH_TYPE === 'signup' && (
+          {authType === 'signup' && (
             <input
               type='password'
               id='password2'
@@ -74,4 +76,4 @@ function AuthView({
   )
 }
 
-export default AuthView
+export default Auth

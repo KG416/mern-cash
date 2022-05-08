@@ -1,31 +1,62 @@
 // libs
-import { useState } from 'react'
-import AuthView from '../../components/AuthView'
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
+// utils
+import { login, reset } from '../../features/auth/authSlice'
+
+// components
+import Auth from '../../components/Auth'
+import Loader from '../../components/Loader'
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
+
+  useEffect(() => {
+    console.log('UE login')
+
+    if (isError) toast.error(message)
+    if (isSuccess || user) navigate('/')
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+
+  const onLoginChange = (e) => {
+    if (e.target.name === 'email') setEmail(e.target.value)
+    if (e.target.name === 'password') setPassword(e.target.value)
+  }
 
   const onLoginSubmit = (e) => {
     e.preventDefault()
-    console.log('onLoginSubmit')
+
+    const userData = {
+      email,
+      password,
+    }
+
+    dispatch(login(userData))
   }
 
-  const onLoginChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  if (isLoading) return <Loader />
 
   return (
-    <AuthView
+    <Auth
+      authType='login'
       heading='Logga in'
       subHeading='tjenare Janne'
       submitText='Logga in'
-      formData={formData}
+      email={email}
+      password={password}
       onSubmit={onLoginSubmit}
       onChange={onLoginChange}
     />
