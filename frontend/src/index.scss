@@ -1,3 +1,5 @@
+@import './global.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 * {
@@ -5,20 +7,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  // TODO: prevent eyes from melting, change later
-  background-color: black;
-  color: gray;
 }
 
 body {
   min-height: 100vh;
+  color: $color3;
+  background-color: $color6;
 }
 
-h1,
-h2,
-h3 {
-  text-align: center;
+input, button {
+  border: none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  /* text-transform: uppercase; */
 }
 
 /* Utility class for visually hiding elements, while keeping it accessiblie to screen readers */

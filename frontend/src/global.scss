@@ -1,5 +1,6 @@
 // misc
-$borderRadiusSmall: 3px;
+$brSmall: 3px;
+$brMedium: 5px;
 
 // breakpoints
 $smallScreen: 576px; // portrait phones
@@ -7,5 +8,15 @@ $mediumScreen: 768px; // tablets
 $mediumLargeScreen: 992px; // laptops
 $largeScreen: 1200px; // large devices
 
-// colors
-$darkGray: #494949;
+// colors (dark)
+$color1: white;
+$color2: #dedede;
+$color3: #b8b8b8;
+$color4: #5f5f5f;
+$color5: #494949;
+$color6: black;
+
+$funColor1: #525ee6;
+$funColor2: #303786;
+
+// colors (light)

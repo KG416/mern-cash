@@ -2,8 +2,32 @@
 
 .wrapper {
   width: 100%;
-  padding: 1rem 0;
-  border-radius: $borderRadiusSmall;
-  background-color: #393939;
-  filter: drop-shadow(0 0 0.1rem #ffffff);
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0.7rem;
+    padding: 1.2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-width: 100%;
+
+    input {
+      margin: 0.6rem 0;
+      padding: 1.1rem;
+      background-color: $color3;
+      border-radius: $brSmall;
+    }
+
+    button {
+      align-self: center;
+    }
+  }
 }

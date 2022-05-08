@@ -13,6 +13,10 @@
     align-items: center;
   }
 
+  a {
+    color: $color3;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
