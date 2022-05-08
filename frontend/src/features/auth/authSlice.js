@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, /* createAsyncThunk */ } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import authService from './authService'
 
 // get user from LC
@@ -93,4 +93,5 @@ export const authSlice = createSlice({
 })
 
 export const { reset } = authSlice.actions
+
 export default authSlice.reducer
