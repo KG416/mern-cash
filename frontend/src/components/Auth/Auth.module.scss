@@ -1,0 +1,37 @@
+@import '../../global.scss';
+
+.wrapper {
+  width: 100%;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0.7rem;
+    padding: 1.2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-width: 100%;
+
+    input {
+      margin: 0.6rem 0;
+      padding: 1.1rem;
+      background-color: $color3;
+      border-radius: $brSmall;
+
+      &:focus-visible {
+        outline: 5px solid $funColor2;
+      }
+    }
+
+    button {
+      align-self: center;
+    }
+  }
+}

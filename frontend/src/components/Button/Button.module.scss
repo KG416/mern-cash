@@ -1,0 +1,29 @@
+@import '../../global.scss';
+
+.button {
+  padding: 0.9rem;
+  margin: 0.5rem 0;
+
+  width: 200px;
+  max-width: 100%;
+
+  font-size: 1rem;
+  border-radius: $brSmall;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary {
+  color: $color1;
+  background-color: $funColor2;
+  border: 2px solid $funColor1;
+
+  &:hover {
+    background-color: $funColor1;
+  }
+
+  &:focus-visible {
+        outline: 5px solid $color3;
+        border: none;
+      }
+}

@@ -1,4 +1,4 @@
-# 🌿 MERN app using Redux Toolkit | WIP 🚧
+# MERN app using Redux Toolkit | WIP 🚧
 
 _What is [MERN](https://www.educative.io/edpresso/what-is-mern-stack)?_
 
@@ -35,6 +35,12 @@ A JavaScript library
 ### [Node](https://nodejs.org/)
 
 A development platform for executing JavaScript code server-side
+
+### Styling | Sass
+The CSS extension `SASS` is used in this project.
+- Components and views have separate CSS files (modules) with locally scoped classes. _Please note that element selectors are not locally scoped._
+- The `global.scss` file contains global styles and variables.
+- The `index.scss` file contains default settings, fonts, accessibility etc.
 
 ## Code organisation
 

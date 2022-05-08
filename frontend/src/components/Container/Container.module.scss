@@ -1,0 +1,7 @@
+@import '../../global.scss';
+
+.container {
+  max-width: $largeScreen;
+  width: calc(100vw - 1em);
+  margin: 0 auto;
+}
