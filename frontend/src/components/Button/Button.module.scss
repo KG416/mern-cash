@@ -8,13 +8,17 @@
   max-width: 100%;
 
   font-size: 1rem;
-  border-radius: $brMedium;
+  border-radius: $brSmall;
   cursor: pointer;
   font-weight: bold;
 }
 
 .primary {
   color: $color1;
-  background-color: $funColor1;
-  border: 2px solid $funColor2;
+  background-color: $funColor2;
+  border: 2px solid $funColor1;
+
+  &:hover {
+    background-color: $funColor1;
+  }
 }
